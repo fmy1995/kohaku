@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+飼い猫「コハク」の日記（予定）
 
-Things you may want to cover:
+admin
+投稿（title,text,image）
+カレンダー
+メモ
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+user
+投稿←コメント（comment）
