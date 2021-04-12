@@ -7,11 +7,25 @@
 
 <div class="container">
  <div class="row">
+  <div class="col-10">  
   
  <div>
-    最近の投稿
-   <li class="nav-item active"><%= link_to "詳細",posts_path, class: 'btn btn-info btn-lg' %></li>
- </div>
-  
+   最近の投稿 <%= link_to "全ての投稿",posts_path, class: 'btn btn-info ml-2 mb-2' %>
+   <table class="table table-bordered">
+  　  <tbody>
+      <% @posts.each do |post| %>　   
+   　   <tr class="bg-light">
+        <td>
+          <%= link_to(post_path(post.id), class:"text-dark ml-2") do %>
+           <%= post.title %> <%= attachment_image_tag post, :image, class:"card-img-top"; %>
+          <% end %>
+        </td>
+       </tr>
+      <% end %>    
+     </tbody>
+    </table>
+  </div>
+
+  </div>  
  </div>    
 </div>
