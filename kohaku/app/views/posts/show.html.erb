@@ -6,6 +6,7 @@
   <%= attachment_image_tag @post, :image ,width: '80%', height: '80%' %>
   <p>タイトル：<%= @post.title %></p>
   <p>本文：<%= @post.body %></p>
+  <p class="btn btn-info"><%= @post.category %></p>
   <p>投稿日時：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
 </div>
 

@@ -7,8 +7,10 @@ Rails.application.routes.draw do
 
 root to: 'homes#top' 
 get "home/about" => "homes#about"
-
+ 
+  resources :genres, :only => [:index,:create,:edit,:show,:update]
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
   end
+
 end

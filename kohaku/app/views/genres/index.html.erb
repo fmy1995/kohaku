@@ -1,0 +1,40 @@
+<div class="container">
+ <div class="row">
+  <div class="m-5">
+    <h3 class="text-center bg-light"><strong>ジャンル一覧</strong></h3>
+
+      <table class="table table-hover table-bordered table-condensed">
+          <tr class="info bg-light">
+            <th>ジャンル</th>
+            <th></th>
+          </tr>
+        <tbody>
+          <% @genres.each do |genre| %>
+            <tr class="bg-light">
+              <td class="text-left"><%= link_to(genre_path(genre.id)) do %><%= genre.name%><% end %></td>
+              <td class="genre-td"><%= link_to "編集する", edit_genre_path(genre), class: "glyphicon glyphicon-pencil btn btn-success" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ </div>
+
+
+ <div class="row">
+  <div class="col-xs-12">
+    <%= form_for @genre, :url => {:action => :create} do |f| %>
+    <div class="col-xs-offset-1 mb-5">
+      <label><strong>ジャンル名</strong></label>
+      <%= f.text_field :name  %>
+      <%= f.radio_button :is_active, true %>
+      <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;"} %>
+      <%= f.radio_button :is_active, false %>
+      <%= f.label :is_active, "無効", {value: :false, style: "display: inline-block;"} %>
+      <%= f.submit "新規登録", class: "btn btn-success" %>
+    </div>
+    <% end %>
+    
+  </div>
+</div>

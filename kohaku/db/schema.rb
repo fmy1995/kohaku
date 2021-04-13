@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_023724) do
+ActiveRecord::Schema.define(version: 2021_04_13_023311) do
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "post_comments", force: :cascade do |t|
     t.text "comment"
