@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    @genres = Genre.where(is_active: true)
   end
 
   def create
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
   
   private
 def post_params
-params.require(:post).permit(:title, :body, :image, :category)
+params.require(:post).permit(:title, :body, :image, :category, :genre_id )
 end
   
   

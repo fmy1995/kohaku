@@ -1,0 +1,30 @@
+<div class="container">
+ <div class="row">
+  <div class="col-10">  
+  
+ <div>
+   最近の投稿 <%= link_to "全ての投稿",posts_path, class: 'btn btn-info ml-2 mb-2' %>
+   <table class="table table-bordered">
+  　  <tbody>
+      <% @posts.each do |post| %>
+   <% if post.genre == @genre %> 
+   　   <tr class="bg-light">
+        <td>
+          <%= link_to(post_path(post.id), class:"text-dark ml-2") do %>
+           <%= post.title %>
+          <% end %>
+        </td>
+        <td width="100" height="50">
+          <%= link_to(post_path(post.id)) do %>
+           <%= attachment_image_tag post, :image, size: '10%', class:"card-img-top"; %>
+          <% end %>         
+        </td>
+       </tr>
+      <% end %>  
+      <% end %>    
+     </tbody>
+    </table>
+  </div>
+  </div>  
+ </div>    
+</div>
