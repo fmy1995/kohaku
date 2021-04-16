@@ -1,6 +1,5 @@
 
 <div class="card-list-containar py-5">
-<%= link_to "投稿作成", new_post_path, class: "btn btn-success mb-2" %>    
   <% @posts.each do |post| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= link_to post_path(post.id) do %>
@@ -21,6 +20,6 @@
     </div>
   </div>
   <% end %>
-  
-</div>
+</div>  
+
 

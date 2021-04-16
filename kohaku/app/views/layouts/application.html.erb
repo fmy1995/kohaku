@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
+    <meta charset="UTF-8 /">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="app.css" />
     <title>Kohaku</title>
+      <link rel="stylesheet" href="app/assets/stylesheets/application.scss" />  
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,28 +14,46 @@
   </head>
 
 <body class="jumbotron jumbotron-fluid" style="background: url(<%= asset_path "bg3.jpg" %>); background-size:cover; background-attachment:fixed; ">
-  <heaer>
+  
+    <script src="jquery.min.js"></script>
+    <script src="app.js"></script>
+  
+  <header>
    <div class="container">
-    <div class="row mt-2 mb-5">
+    <div class="row mt-5 mb-5">
      <div class="col-2">        
-      <h3>コハク日記</h3>
+     <%= image_tag 'logo.png', size: '150x100', class: "navbar-brand logo justify-content-left", alt: "ヘッダーロゴ" %>
      </div>  
-    
-     <div class="col-8">  
+     <div class="col-8">
      <%= link_to "Home",root_path, class: 'btn btn-info btn-lg' %>
      <%= link_to "Index",posts_path, class: 'btn btn-info btn-lg' %>
      <%= link_to "Genre",genres_path, class: 'btn btn-info btn-lg' %>     
      <%= link_to "About",home_about_path, class: 'btn btn-info btn-lg' %>
+     <%= link_to "+New Post", new_post_path, class: "btn btn-success btn-lg" %> 
     </div>    
    </div>    
-  </heaer>
+  </header>
+    
+<div class="site-body mt-5">
+
     
     <%= yield %>
     
+</div> 
+    
   <footer>
-  
-  
-  
+
   </footer>  
-  </body>
+  <span id="back">
+    <a href="">
+      <%= image_tag asset_path('arrow.png'), data: {"turbolinks"=>false}, class: "arrow" %>
+    </a>
+  </span>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.fadethis.min.js"></script>
+<script>
+  $(window).fadeThis();
+</script>
+  
+</body>
 </html>
