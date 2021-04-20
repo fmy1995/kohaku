@@ -1,5 +1,8 @@
-
-<div class="card-list-containar py-5">
+<div class="containar">
+<div class="row">
+<div class="col">
+  
+<div class="card-list-containar py-3">
   <% @posts.each do |post| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= link_to post_path(post.id) do %>
@@ -21,5 +24,9 @@
   </div>
   <% end %>
 </div>  
+
+</div>
+</div>
+</div>
 
 

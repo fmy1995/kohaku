@@ -24,3 +24,14 @@ $(function() {
     event.preventDefault();
   });
 });
+
+$(window).scroll(function() {
+  var windowH = $(window).height(),
+    scrollY = $(window).scrollTop();
+  $('p').each(function() {
+    var elPosition = $(this).offset().top;
+    if (scrollY > elPosition - windowH) {
+      $(this).addClass("txt-effect");
+    }
+  });
+});

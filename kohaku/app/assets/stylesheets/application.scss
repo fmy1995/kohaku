@@ -31,6 +31,16 @@ font-family: "arial black" ;
 }
 
 
+.txt-effect {
+  animation: txtEffect 2s both;
+}
+@keyframes txtEffect {
+  100% {
+    font-size: 24px;
+  }
+}
+
+
 #back {
   position: fixed;
   right: 20px;
